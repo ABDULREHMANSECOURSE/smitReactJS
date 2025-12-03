@@ -1,25 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Navbar from './components/header/navbar';
 import Footer from './components/footer';
+import { BrowserRouter } from 'react-router-dom'; // <-- add this
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Abdul Rehman Ki Pehli React Web</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Parhlo React
-        </a>
-      </header>
-      <Footer/>
-    </div>
+    <BrowserRouter> {/* <-- wrap here */}
+      <Navbar />
+      <Footer />
+    </BrowserRouter>
   );
 }
 

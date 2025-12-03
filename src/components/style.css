@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #ffffff83;
+    padding: 20px;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    gap: 50px;
+}
+
+nav {
+    width: 100%;
+    margin: auto;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4b4848;
+    padding: 0 10px;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.navPages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.navPages a {
+    text-decoration: none;
+    color: #ffffff83;
+    font-size: 18px;
+    font-weight: bold;
+    transition-duration: 1000ms;
+}
+
+.navPages a:hover,
+.mobileMenu a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    color: #ffffff;
+    scale: 1.2;
+    cursor: pointer;
+}
+
+.navIcons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.navIcons img {
+    height: 20px;
+}
+
+.navIcons img:hover,
+.menuIcon:hover {
+    transition-duration: 300ms;
+    scale: 1.2;
+    cursor: pointer;
+}
+
+.menuIcon {
+    display: none;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+.headerContent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+.headerText {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3vw;
+}
+
+.headerText button {
+    width: 150px;
+    height: 40px;
+    background-color: #ffffff83;
+    border: none;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bold;
+    cursor: pointer;
+    transition-duration: 1000ms;
+}
+
+.headerText button:hover {
+    background-color: #ffffff3f;
+    scale: 1.2;
+}
+
+.headerText img {
+    height: 30px;
+}
+
+.headerImage {
+    position: relative;
+    flex: 1;
+}
+
+.headerImage img {
+    width: 90%;
+}
+
+.headerText h1 {
+    color: #ffffff;
+}
+
+.headerText p {
+    font-size: 15px;
+    color: #ffffff83;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+main {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.category {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    /* allow horizontal scrolling */
+    scroll-behavior: smooth;
+    /* smooth scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* smooth scrolling on iOS */
+    padding-bottom: 20px;
+}
+
+/* Target the scrollbar itself */
+.category::-webkit-scrollbar {
+    height: 15px;
+    /* Set the height of the horizontal scrollbar */
+}
+
+/* Target the thumb (the movable part you drag) */
+.category::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* The color of the scrollbar thumb */
+    border-radius: 50%;
+    /* Rounded corners for the thumb */
+    border: 2px solid #0d0d0d;
+    /* Optional: adds a padding effect, match your container background */
+}
+
+/* Optional: Style the thumb when hovering over it */
+.category::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* A slightly darker color on hover */
+}
+
+
+.categoryH2 {
+    color: #ffffffb7;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.category span {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff86;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.category span img {
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+}
+
+.category h2 {
+    padding: 10px;
+    color: #000000c0;
+    font-weight: bolder;
+    font-size: 100%;
+}
+
+.products {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.product h3 {
+    margin: 10px 0;
+    width: 150px;
+    color: #000000a2;
+    font-size: 20px;
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+
+    header,
+    main {
+        width: 98%;
+    }
+
+    nav {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    .navIcons img {
+        height: 18px;
+    }
+
+    .navIcons {
+        gap: 10px;
+    }
+
+    .navPages {
+        display: none;
+    }
+
+    .menuIcon {
+        display: block;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .mobileMenu {
+        position: absolute;
+        top: 120%;
+        right: 0;
+        background-color: #ffffffc7;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+
+    .mobileMenu a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 16px;
+        font-weight: bold;
+        transition-duration: 500ms;
+    }
+
+    .headerContent {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .headerImage img {
+        max-width: 400px;
+    }
+
+    .product {
+        max-width: 90%;
+    }
+}
+
+.productOverView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffffbe;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    max-width: 400px;
+}
+
+.products img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.products p:nth-of-type(1) {
+    width: 150px;
+    text-align: center;
+    color: #e91e63;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.products p:nth-of-type(2) {
+    text-align: center;
+    width: 150px;
+    color: #777;
+    font-size: 14px;
+}
+
+main {
+    margin-bottom: 100px;
+}
+
+.showAll {
+    cursor: pointer;
+    width: 150px;
+}
+
+.showAll h1 {
+    color: #ffffffb7;
+}
