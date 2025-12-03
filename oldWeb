@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta property="og:image" content="https://smitloginsigninpagejs.vercel.app/assets/arpLogo.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Web</title>
+    <link rel="stylesheet" href="/src/components/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo"><img src="assets/arp.png" alt="logo"></a>
+            <span class="navPages">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </span>
+            <span class="navIcons">
+                <a href=""><img src="assets/icons/magnifying-glass-solid.svg" alt=""></a>
+                <a href=""><img src="assets/icons/heart-regular.svg" alt=""></a>
+                <a href=""><img src="assets/icons/cart-shopping-solid.svg" alt=""></a>
+                <a href=""><img src="assets/icons/user-regular.svg" alt=""></a>
+            </span>
+            <span class="mobileMenu">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </span>
+            <img class="menuIcon" src="assets/icons/bars-solid.svg" alt="Menu Icon"
+                onclick="displayNoneOrOther('.mobileMenu', 'flex')">
+        </nav>
+        <span class="headerContent">
+            <span class="headerText">
+                <h4>Aukat Kee Bahir Headphone</h4>
+                <h1>ASTRO A50 X LIGHTSPEED <br> WIRELESS</h1>
+                <p>Experience next-level wireless gaming audio with the ASTRO A50 Wireless
+                    + Base Station. Engineered for pro-grade performance, the ASTRO A50
+                    delivers superior sound quality, unrivaled comfort, and advanced
+                    features to elevate your gaming experience.</p>
+                <button><img src="assets/icons/cart-shopping-solid.svg" alt=""> Shop Now</button>
+            </span>
+            <span class="headerImage">
+                <img src="assets/astro-a50-x-white-gallery-7.png" alt="">
+            </span>
+        </span>
+    </header>
+    <main>
+        <h2 class="categoryH2">Browse By Category</h2>
+        <span class="showAll" onclick="loadProduct()">
+            <h1>Show All</h1>
+        </span>
+        <span class="category">
+            <span id="electronics" onclick="loadProduct('electronics')">
+                <img src="assets/category/electronics.webp" alt="">
+                <h2>Electronics</h2>
+            </span>
+            <span id="clothing&Apparel" onclick="loadProduct('clothing&Apparel')">
+                <img src="assets/category/clothing&Apparel.jpg" alt="">
+                <h2>Clothing & Apparel</h2>
+            </span>
+            <span id="homeAppliances" onclick="loadProduct('homeAppliances')">
+                <img src="assets/category/homeAppliances.jpg" alt="">
+                <h2>Home Appliances</h2>
+            </span>
+            <span id="grocery" onclick="loadProduct('grocery')">
+                <img src="assets/category/grocery.webp" alt="">
+                <h2>Grocery</h2>
+            </span>
+            <span id="toys&Games" onclick="loadProduct('toys&Games')">
+                <img src="assets/category/toys&Games.jpg" alt="">
+                <h2>Toys & Games</h2>
+            </span>
+            <span id="furniture" onclick="loadProduct('furniture')">
+                <img src="assets/category/furniture.webp" alt="">
+                <h2>Furniture</h2>
+            </span>
+            <span id="mobilePhones" onclick="loadProduct('mobilePhones')">
+                <img src="assets/category/mobilePhones.jpg" alt="">
+                <h2>Mobile Phones</h2>
+            </span>
+            <span id="books&Media" onclick="loadProduct('books&Media')">
+                <img src="assets/category/books&Media.png" alt="">
+                <h2>Books & Media</h2>
+            </span>
+            <span id="sports&Outdoors" onclick="loadProduct('sports&Outdoors')">
+                <img src="assets/category/sports&Outdoors.jpeg" alt="">
+                <h2>Sports & Outdoors</h2>
+            </span>
+            <span id="beauty&PersonalCare" onclick="loadProduct('beauty&PersonalCare')">
+                <img src="assets/category/beauty&PersonalCare.jpg" alt="">
+                <h2>Beauty & Personal Care</h2>
+            </span>
+            <span id="accessories" onclick="loadProduct('accessories')">
+                <img src="assets/category/accessories.webp" alt="">
+                <h2>Accessories</h2>
+            </span>
+
+        </span>
+        <span class="products">
+        </span>
+    </main>
+    <footer style="border-radius: 10px; text-align:center; padding:20px; background:#222; color:#fff;">
+        &copy; 2025 Abdul Rehman. All rights reserved.
+    </footer>
+
+</body>
+<script src="script.js"></script>
+
+</html>
