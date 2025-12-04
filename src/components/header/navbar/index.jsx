@@ -11,16 +11,16 @@ import heartIcon from "../../assets/icons/heart-regular.svg";
 import cartIcon from "../../assets/icons/cart-shopping-solid.svg";
 import userIcon from "../../assets/icons/user-regular.svg";
 import menuBars from "../../assets/icons/bars-solid.svg";
-
-export default function Navbar() {
-
-  const toggleMenu = () => {
-    const menu = document.querySelector(".mobileMenu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-  };
-
-  return (
-    <nav>
+  
+  export default function Navbar() {
+    
+    const toggleMenu = () => {
+      const menu = document.querySelector(".mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    };
+    
+    return (
+      <nav>
       <Link to="/" className="logo">
         <img src={Logo} alt="logo" />
       </Link>
@@ -32,11 +32,12 @@ export default function Navbar() {
         <Link to="/contact">Contact</Link>
       </span>
 
-      <span className="navIcons">
+      <span className="navIcons" >
         <Link to="/search"><img src={searchIcon} alt="" /></Link>
         <Link to="/wishlist"><img src={heartIcon} alt="" /></Link>
         <Link to="/cart"><img src={cartIcon} alt="" /></Link>
         <Link to="/account"><img src={userIcon} alt="" /></Link>
+        <Link to="/account" className="signinBtn">Sign In</Link>
       </span>
 
       <span className="mobileMenu">
@@ -55,3 +56,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+const logedAccount = localStorage.getItem('logedAccount')

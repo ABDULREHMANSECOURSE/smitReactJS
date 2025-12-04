@@ -541,7 +541,6 @@ export default function App() {
                     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl */
                     width: 100%;
                     max-width: 28rem; /* max-w-md */
-                    margin-top: 2rem;
                     transition: all 0.5s ease-in-out;
                     box-sizing: border-box;
                 }
@@ -557,7 +556,6 @@ export default function App() {
                     font-size: 1.875rem; /* text-3xl */
                     font-weight: 700; /* font-bold */
                     color: #1f2937; /* text-gray-800 */
-                    margin-bottom: 1.5rem; /* mb-6 */
                 }
 
                 .auth-form {
@@ -565,10 +563,9 @@ export default function App() {
                     flex-direction: column;
                     align-items: center;
                     width: 100%;
-                    row-gap: 1.5rem; /* space-y-6 */
+                    row-gap: 15px;
                 }
                 
-                .space-y-5-override > div { margin-top: 1.25rem; }
                 .space-y-4-override > div { margin-top: 1rem; }
                 .mt-5-override { margin-top: 1.25rem; }
                 .mt-neg10-override { margin-top: -0.625rem; padding-bottom: 1rem; }
