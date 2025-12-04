@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Eye, EyeOff, UserCircle } from 'lucide-react'; 
+import Navbar from '../components/header/navbar';
 
 // --- Global Constants and Utilities ---
 
@@ -513,7 +514,7 @@ export default function App() {
                     margin: 0;
                     padding: 0;
                     font-family: 'Inter', sans-serif;
-                    background-color: #f9fafb; /* bg-gray-50 */
+                    background-color: #000000ff; /* bg-gray-50 */
                 }
                 
                 .app-container {
@@ -535,10 +536,9 @@ export default function App() {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    background-color: #ffffff;
+                    background-color: #ffffff21;
                     padding: 1.5rem; /* p-6 */
                     border-radius: 1.5rem; /* rounded-3xl */
-                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl */
                     width: 100%;
                     max-width: 28rem; /* max-w-md */
                     transition: all 0.5s ease-in-out;
@@ -555,7 +555,8 @@ export default function App() {
                 .main-heading {
                     font-size: 1.875rem; /* text-3xl */
                     font-weight: 700; /* font-bold */
-                    color: #1f2937; /* text-gray-800 */
+                    color: #ffffffff; /* text-gray-800 */
+                    margin-bottom:20px;
                 }
 
                 .auth-form {
@@ -565,8 +566,12 @@ export default function App() {
                     width: 100%;
                     row-gap: 15px;
                 }
-                
-                .space-y-4-override > div { margin-top: 1rem; }
+                .space-y-4-override{
+                    width:100%;
+                }
+                .space-y-4-override > div { 
+                    margin-top: 1rem;
+                }
                 .mt-5-override { margin-top: 1.25rem; }
                 .mt-neg10-override { margin-top: -0.625rem; padding-bottom: 1rem; }
 
@@ -576,26 +581,28 @@ export default function App() {
                     display: flex;
                     flex-direction: column;
                     row-gap: 0.5rem; /* space-y-2 */
+                    margin-top: 30px;
                 }
 
                 .input-label {
                     font-weight: 600; /* font-semibold */
-                    color: #374151; /* text-gray-700 */
+                    color: #ffffffff; /* text-gray-700 */
                 }
 
                 .form-input, .gender-select-override {
                     width: 100%;
                     padding: 0.75rem; /* p-3 */
-                    background-color: #f3f4f6; /* bg-gray-100 */
-                    border: 1px solid #e5e7eb; /* border border-gray-200 */
+                    background-color: #ffffff10; /* bg-gray-100 */
+                    border: 1px solid #ffffffff; /* border border-gray-200 */
                     border-radius: 0.5rem; /* rounded-lg */
                     outline: none;
                     transition: border-color 0.2s, box-shadow 0.2s;
+                    color: #ffffffff;
                 }
 
                 .form-input:focus {
-                    border-color: #4f46e5; /* focus:ring-indigo-500 */
-                    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.5); /* focus:ring-2 */
+                    border-color: #ffffffff; /* focus:ring-indigo-500 */
+                    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* focus:ring-2 */
                 }
                 
                 .form-section {
@@ -604,7 +611,7 @@ export default function App() {
                     flex-direction: column;
                     row-gap: 1.5rem; /* space-y-6 */
                     border-top: 1px solid #d1d5db; /* border-y border-gray-300 */
-                    border-bottom: 1px solid #d1d5db;
+                    border-bottom: 1px solid #ffffffff;
                 }
 
                 /* Password Input Specifics */
@@ -612,7 +619,7 @@ export default function App() {
                     display: flex;
                     align-items: center;
                     width: 100%;
-                    background-color: #f3f4f6;
+                    background-color: #ffffff10;
                     border: 1px solid #e5e7eb;
                     border-radius: 0.5rem;
                     padding-right: 0.5rem;
@@ -806,9 +813,14 @@ export default function App() {
                     font-weight: 600;
                 }
                 
+                nav{
+                width:90%;
+                top:10px;
+                }
             `}
         </style>
         
+        <Navbar/>
         <div className="app-container">
             <div className="auth-card">
 

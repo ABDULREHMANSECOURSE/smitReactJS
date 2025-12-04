@@ -364,3 +364,23 @@ main {
 .showAll h1 {
     color: #ffffffb7;
 }
+
+/* Add this to your ../../style.css */
+.profile-initial-style {
+    /* Sizing */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #6200ff;
+    color: white;
+    font-weight: bolder;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
