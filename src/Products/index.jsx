@@ -16,12 +16,12 @@ import beauty from "./assets/category/beauty&PersonalCare.jpg";
 import accessories from "./assets/category/accessories.webp";
 
 const defaultProducts = [
-  { id: 1, name: "iPhone 15 Pro", price: 1199, category: "mobilePhones", image: "assets/category/mobilePhones.jpg" },
-  { id: 2, name: "Nike Air Max", price: 180, category: "clothing&Apparel", image: "https://via.placeholder.com/300x300" },
-  { id: 3, name: "Smart LED TV", price: 799, category: "electronics", image: "https://via.placeholder.com/300x300" },
-  { id: 4, name: "PlayStation 5", price: 499, category: "toys&Games", image: "https://via.placeholder.com/300x300" },
-  { id: 5, name: "Wooden Dining Table", price: 399, category: "furniture", image: "https://via.placeholder.com/300x300" },
-  { id: 6, name: "Lipstick Set", price: 45, category: "beauty&PersonalCare", image: "https://via.placeholder.com/300x300" },
+  { id: 1, name: "iPhone 15 Pro", price: 1199, category: "mobilePhones", image: mobilePhones },
+  { id: 2, name: "Nike Air Max", price: 180, category: "clothing&Apparel", image: "https://www.bfgcdn.com/1500_1500_90/024-1543/nike-air-max-alpha-trainer-6-sneakers.jpg" },
+  { id: 3, name: "Smart LED TV", price: 799, category: "electronics", image: "https://oktra.pk/wp-content/uploads/2019/04/2-12.png" },
+  { id: 4, name: "PlayStation 5", price: 499, category: "toys&Games", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrOcjFU_oubOokcaWfMUoOA5vWekRYfEIpgA&s" },
+  { id: 5, name: "Wooden Dining Table", price: 399, category: "furniture", image: "https://homedesign.pk/2299-large_default/paramo-4-person-wooden-dining-table-hd-dtbl-022.jpg" },
+  { id: 6, name: "Lipstick Set", price: 45, category: "beauty&PersonalCare", image: "https://img.drz.lazcdn.com/static/pk/p/c796a7800cc202b0477a40706295212f.jpg_720x720q80.jpg" },
 ];
 
 // Ye purana hai (delete karo)
