@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 
 const initialProductState = {
     imageFile: null,
-    imageFile: null,
     imageURL: "",
     name: "",
     price: "",
