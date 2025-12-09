@@ -68,7 +68,11 @@ export function AddProduct() {
     return (
         <>
             <style jsx>{`
-                * { margin: 0; padding: 0; box-sizing: border-box; }
+                * { margin: 0; 
+                    padding: 0; 
+                    box-sizing: 
+                    border-box; 
+                }
                 
                 body, .container {
                     min-height: 100vh;
@@ -90,12 +94,23 @@ export function AddProduct() {
                     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
                     animation: pop 0.4s ease-out;
                 }
-                .popup.success { background: #00ff88; color: black; }
-                .popup.error { background: #ff2d55; }
+                .popup.success { 
+                    background: #00ff88; 
+                    color: black; 
+                }
+                .popup.error { 
+                    background: #ff2d55; 
+                }
 
                 @keyframes pop {
-                    0% { transform: translate(-50%, -100px); opacity: 0; }
-                    100% { transform: translateX(-50%); opacity: 1; }
+                    0% { 
+                        transform: translate(-50%, -100px); 
+                        opacity: 0; 
+                    }
+                    100% { 
+                        transform: translateX(-50%); 
+                        opacity: 1; 
+                    }
                 }
 
                 .main-title {
