@@ -27,7 +27,6 @@ const MessageDisplay = ({ message, type }) => {
     );
 };
 
-// --- 2. Login Component ---
 const LoginComponent = ({
     loginEmail, setLoginEmail, loginPassword, setLoginPassword,
     showLoginPassword, setShowLoginPassword, handleLogin, toggleView
@@ -80,14 +79,12 @@ const LoginComponent = ({
     </form>
 );
 
-// --- 3. Sign Up Component ---
 const SignUpComponent = ({
     signUpForm, handleSignUpChange, handleSignUp, handleImageChange, toggleView,
     showSignUpPassword, setShowSignUpPassword, profileImageBase64
 }) => (
     <form onSubmit={handleSignUp} className="auth-form space-y-5-override">
 
-        {/* Profile Image Upload */}
         <div className="profile-upload-area">
             <label className="input-label">
                 Profile Photo (Required)
@@ -108,7 +105,6 @@ const SignUpComponent = ({
             </div>
         </div>
 
-        {/* Name Fields */}
         <div className="name-fields-group">
             <div className="input-group flex-1-override">
                 <label htmlFor="fName" className="input-label">First Name</label>
@@ -120,7 +116,6 @@ const SignUpComponent = ({
             </div>
         </div>
 
-        {/* Gender Select */}
         <select id="gender" value={signUpForm.gender} onChange={handleSignUpChange} required className="form-input gender-select-override">
             <option value="select gender" disabled>Select Gender</option>
             <option value="male">Male</option>
@@ -128,7 +123,6 @@ const SignUpComponent = ({
             <option value="other">Other</option>
         </select>
 
-        {/* Email & Password */}
         <div className="w-full space-y-4-override">
             <div className="input-group">
                 <label htmlFor="email" className="input-label">Email</label>
@@ -153,7 +147,6 @@ const SignUpComponent = ({
             </div>
         </div>
 
-        {/* DOB & Phone */}
         <div className="w-full space-y-4-override">
             <div className="input-group">
                 <label htmlFor="dob" className="input-label">Date of Birth (DOB)</label>
@@ -182,9 +175,7 @@ const SignUpComponent = ({
     </form>
 );
 
-// --- 4. Profile Component ---
 const ProfileComponent = ({ loggedAccountData, handleLogout, toggleView }) => {
-    // Redirects to login page if no data (Route Guard)
     const [redirected, setRedirected] = useState(false);
 
     useEffect(() => {
@@ -209,7 +200,6 @@ const ProfileComponent = ({ loggedAccountData, handleLogout, toggleView }) => {
         <div className="profile-container">
             <h2 className="profile-title">Your Profile</h2>
 
-            {/* Profile Image */}
             <div className="profile-image-large-container">
                 {profileImageBase64 ? (
                     <img src={profileImageBase64} alt="Profile" className="profile-image" />
@@ -244,27 +234,15 @@ const ProfileInfoBox = ({ title, value }) => (
 );
 
 
-// =========================================================================
-//                                MAIN COMPONENT
-// =========================================================================
 
 export default function App() {
-    // NOTE: Using localStorage as requested by the provided code structure.
-    // For a real-world application, Firebase Firestore would be mandatory.
 
     const [currentView, setCurrentView] = useState('/login');
-
-    // State for storing all registered accounts
     const [accounts, setAccounts] = useState([]);
-    // State for the currently logged-in user's data
     const [loggedAccountData, setLoggedAccountData] = useState(null);
-
-    // Login Form States
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
     const [showLoginPassword, setShowLoginPassword] = useState(false);
-
-    // Sign Up Form States
     const [signUpForm, setSignUpForm] = useState({
         fName: '', lName: '', gender: 'select gender', email: '',
         password: '', dob: '', phoneNumber: '',
