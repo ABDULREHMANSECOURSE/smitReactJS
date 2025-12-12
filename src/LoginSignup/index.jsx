@@ -250,24 +250,19 @@ export default function App() {
     const [profileImageBase64, setProfileImageBase64] = useState(null);
     const [showSignUpPassword, setShowSignUpPassword] = useState(false);
 
-    // Message State
     const [message, setMessage] = useState({ text: null, type: null });
 
-    // Function to change view (simulated routing)
     const toggleView = useCallback((path) => {
         setCurrentView(path);
         setMessage({ text: null, type: null });
     }, []);
 
-    // --- Initial Data Load and Auto-Login Check (Login Protection) ---
     useEffect(() => {
-        // 1. Load all accounts data
         const storedAccounts = localStorage.getItem('accounts');
         if (storedAccounts) {
             setAccounts(JSON.parse(storedAccounts));
         }
 
-        // 2. Check login session
         const storedLoggedEmail = localStorage.getItem('logedAccount');
 
         if (storedLoggedEmail && storedLoggedEmail !== 'null') {
@@ -278,7 +273,6 @@ export default function App() {
 
             if (user) {
                 setLoggedAccountData(user);
-                // If logged in, navigate to profile
                 setCurrentView('/profile');
             } else {
                 localStorage.removeItem('logedAccount');
@@ -286,7 +280,6 @@ export default function App() {
         }
     }, []);
 
-    // --- Handlers ---
 
     const handleImageChange = async (e) => {
         const file = e.target.files[0];
@@ -312,7 +305,6 @@ export default function App() {
         setTimeout(() => setMessage({ text: null, type: null }), 5000);
     };
 
-    // --- Sign Up Logic ---
     const handleSignUp = (e) => {
         e.preventDefault();
         setMessage({ text: null, type: null });
@@ -320,13 +312,11 @@ export default function App() {
         const user = { profileImageBase64: profileImageBase64 };
         let isValid = true;
 
-        // NEW: Check if profile image is uploaded
         if (isValid && !profileImageBase64) {
             handleMessage('Profile photo is required.', 'error');
             isValid = false;
         }
 
-        // Validation Checks (English messages)
         if (isValid && (signUpForm.fName.length < 3 || signUpForm.fName.length > 12)) {
             handleMessage('First Name must be between 3 and 12 characters.', 'error'); isValid = false;
         } else if (isValid) { user.fName = signUpForm.fName; }
@@ -347,7 +337,7 @@ export default function App() {
             } else if (!emailRegex.test(lowerCaseEmail)) {
                 handleMessage('Please enter a valid email address.', 'error'); isValid = false;
             } else {
-                user.email = lowerCaseEmail; // Save email in lowercase
+                user.email = lowerCaseEmail;
             }
         }
 
@@ -366,7 +356,6 @@ export default function App() {
         } else if (isValid) { user.dob = signUpForm.dob; }
 
         if (isValid) {
-            // Regex for Pakistani phone format 03XXXXXXXXX (with optional international prefix)
             const phoneNumberRegex = /^((\+92|0092|92)?(0)?)(3)([0-9]{9})$/;
             if (!phoneNumberRegex.test(signUpForm.phoneNumber)) {
                 handleMessage('Invalid phone number (Pakistani format: e.g., 03XXXXXXXXX is required).', 'error'); isValid = false;
@@ -375,7 +364,6 @@ export default function App() {
             }
         }
 
-        // Final Save 
         if (isValid) {
             const newAccounts = [...accounts, user];
             setAccounts(newAccounts);
@@ -393,7 +381,6 @@ export default function App() {
         }
     };
 
-    // --- Log In Logic ---
     const handleLogin = (e) => {
         e.preventDefault();
         setMessage({ text: null, type: null });
@@ -405,7 +392,6 @@ export default function App() {
         );
 
         if (foundUser) {
-            // Save only the lowercase email for session
             localStorage.setItem('logedAccount', JSON.stringify(foundUser.email));
 
             setLoggedAccountData(foundUser);
@@ -415,14 +401,12 @@ export default function App() {
             setLoginEmail('');
             setLoginPassword('');
 
-            // Navigate to profile view
             toggleView('/profile');
         } else {
             handleMessage("Login Failed: Invalid Email or Password.", 'error');
         }
     };
 
-    // --- Log Out Logic ---
     const handleLogout = () => {
         setLoggedAccountData(null);
         localStorage.removeItem('logedAccount');
@@ -430,7 +414,6 @@ export default function App() {
         toggleView('/login');
     };
 
-    // --- Conditional View Rendering (Simulated Router) ---
     const renderCurrentView = () => {
         switch (currentView) {
             case '/login':
@@ -459,7 +442,6 @@ export default function App() {
                     </>
                 );
             case '/profile':
-                // ProfileComponent handles its own redirection (Route Guard)
                 return (
                     <ProfileComponent
                         loggedAccountData={loggedAccountData}
@@ -468,14 +450,12 @@ export default function App() {
                     />
                 );
             default:
-                // Redirect to login if route is invalid
                 return toggleView('/login');
         }
     };
 
     return (
         <>
-            {/* INTERNAL CSS BLOCK */}
             <style>
                 {`
                 /* Base Reset and Layout */
@@ -798,10 +778,8 @@ export default function App() {
             <div className="app-container">
                 <div className="auth-card">
 
-                    {/* Status Message */}
                     <MessageDisplay message={message.text} type={message.type} />
 
-                    {/* Conditional View Rendering */}
                     {renderCurrentView()}
                 </div>
             </div>

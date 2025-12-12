@@ -2,7 +2,7 @@ import './App.css';
 import { Home } from './Home';
 import LogInSignUp from './LoginSignup';
 import {AddProduct} from './addProduct';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // <-- add this
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (

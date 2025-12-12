@@ -307,7 +307,6 @@ export function AddProduct() {
             `}</style>
 
             <div className="container">
-                {/* Popup */}
                 {popup.message && (
                     <div className={`popup ${popup.isSuccess ? 'success' : 'error'}`}>
                         {popup.message}
@@ -315,11 +314,8 @@ export function AddProduct() {
                 )}
 
                 <h1 className="main-title">ADD PRODUCT</h1>
-
-                {/* Form */}
                 <div className="form-card">
                     <h2 className="form-title">Product Information</h2>
-
                     <div className="input-group">
                         <label>Product Image (Square Only)</label>
                         <div className="image-upload">
@@ -331,17 +327,14 @@ export function AddProduct() {
                             )}
                         </div>
                     </div>
-
                     <div className="input-group">
                         <label>Product Name</label>
                         <input type="text" id="name" placeholder="Enter name" value={product.name} onChange={handleInputChange} />
                     </div>
-
                     <div className="input-group">
                         <label>Price ($)</label>
                         <input type="number" id="price" placeholder="0.00" step="0.01" value={product.price} onChange={handleInputChange} />
                     </div>
-
                     <div className="input-group">
                         <label>Category</label>
                         <select id="category" value={product.category} onChange={handleInputChange}>
@@ -360,13 +353,10 @@ export function AddProduct() {
                             <option value="other">Other</option>
                         </select>
                     </div>
-
                     <button className="add-btn" onClick={addProductFunc}>
                         ADD TO STORE
                     </button>
                 </div>
-
-                {/* Preview */}
                 <h2 className="preview-title">LIVE PREVIEW</h2>
                 <div className="preview-card">
                     {product.imageURL ? (

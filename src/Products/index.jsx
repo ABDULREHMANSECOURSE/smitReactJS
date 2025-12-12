@@ -1,8 +1,5 @@
-// src/components/Shop.jsx   (ya jahan bhi rakhna chahte ho)
-
 import React, { useState, useEffect } from "react";
 
-// Naya (bas ye likho)
 import electronics from "./assets/category/electronics.webp";
 import clothing from "./assets/category/clothing&Apparel.jpg";
 import homeAppliances from "./assets/category/homeAppliances.jpg";
@@ -23,10 +20,6 @@ const defaultProducts = [
   { id: 5, name: "Wooden Dining Table", price: 399, category: "furniture", image: "https://homedesign.pk/2299-large_default/paramo-4-person-wooden-dining-table-hd-dtbl-022.jpg" },
   { id: 6, name: "Lipstick Set", price: 45, category: "beauty&PersonalCare", image: "https://img.drz.lazcdn.com/static/pk/p/c796a7800cc202b0477a40706295212f.jpg_720x720q80.jpg" },
 ];
-
-// Ye purana hai (delete karo)
-// img: "./assets/category/electronics.webp"
-
 
 const categories = [
   { id: "electronics", label: "Electronics", img: electronics },
@@ -58,14 +51,12 @@ const Shop = () => {
     <main style={{width:"100%"}}>
       <h2 className="categoryH2">Browse By Category</h2>
 
-      {/* Show All Button - sirf jab category select ho */}
       {selectedCategory && (
         <div className="showAll" onClick={() => setSelectedCategory(null)}>
           <h1>Show All</h1>
         </div>
       )}
 
-      {/* Categories - Horizontal Scroll */}
       <div className="category">
         {categories.map(cat => (
           <span
@@ -83,7 +74,6 @@ const Shop = () => {
         ))}
       </div>
 
-      {/* Products Grid */}
       <div className="products">
         {filteredProducts.length === 0 ? (
           <p style={{ color: "#fff", textAlign: "center", width: "100%", fontSize: "1.5rem" }}>
